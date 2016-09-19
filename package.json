@@ -1,0 +1,24 @@
+{
+  "name": "report_automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhavin22/ExcelReportAutomation.git"
+  },
+  "author": "niall hickey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bhavin22/ExcelReportAutomation/issues"
+  },
+  "homepage": "https://github.com/bhavin22/ExcelReportAutomation#readme",
+  "dependencies": {
+    "express-session": "^1.14.1",
+    "passport": "^0.3.2",
+    "passport-auth0": "^0.5.2"
+  }
+}

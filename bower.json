@@ -1,0 +1,10 @@
+{
+  "name": "report_automation",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "niall hickey"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/bhavin22/ExcelReportAutomation"
+}
