@@ -18,6 +18,6 @@ reportAutomation.config(function($routeProvider) {
 		});
 });
 
-interviewApp.run(function($rootScope) {
+reportAutomation.run(function($rootScope) {
  	
 });

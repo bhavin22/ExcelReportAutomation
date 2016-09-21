@@ -52,7 +52,7 @@ rule.minute = 0;
 				    		cursor.each(function(err, doc) {
 						      assert.equal(err, null);
 						      	if (doc != null) {
-						      		doc.Raised Diaries = 'No';
+						      		doc['Raised Diaries'] = 0;
 						         	db.collection('no_diary').insertOne(doc);
 						      	} else {
 						      		console.log('End Scheduler!');

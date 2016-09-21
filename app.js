@@ -11,11 +11,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
+require(path.join(__dirname, 'route.js'))(app, path);
 
 MongoClient.connect(url, function(err, db) {
 	assert.equal(null, err);
 	console.log("Connected correctly to server.");
-	require(path.join(__dirname, 'route.js'))(app, path, db, assert);
+	require(path.join(__dirname , "db.js"))(app, db, assert);
 	app.listen(3000);
 });
 
