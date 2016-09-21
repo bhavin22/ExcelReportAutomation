@@ -1,22 +1,24 @@
 <h2 class="center">No Diaries Report</h2>
 <br>
-<table border=1>
-	<tr>
-		<th ng:repeat="key in noDiaryTableHead">{{key}}</th>
-		<th>Raised Dairies</th>
-	</tr>
+<table class="table table-bordered table-hover" border=1>
+  <thead>
+  	<tr>
+  		<th ng:repeat="key in noDiaryTableHead">{{key}}</th>
+  		<th>Raised Dairies</th>
+  	</tr>
+  </thead>
   <tbody>
   	<tr ng:repeat="data in noDiaryData">
   		<td ng:repeat="key in noDiaryTableHead">
   			{{data[key]}}
   		</td>
   		<td>
-  			<input type="checkbox" id={{data["_id"]}} class="raisedDiaries" ng-checked={{data["raisedkeys"]}} /> Yes
+  			<input type="checkbox" id={{data["_id"]}} class="raisedDiaries" ng-checked={{data["raised_diary"]}} /> Yes
   		</td>
   	</tr>
   </tbody>
 </table>
 <br>
 <div class="center">
-<button class="btn btn-small btn-success" ng-click="saveData()">Save</button>
+<button class="btn btn-success" ng-click="saveData()">Save</button>
 </div>

@@ -4,13 +4,18 @@ reportAutomation.config(function($routeProvider) {
 	$routeProvider
 		// route for the home page
 		.when('/', {
-			templateUrl : 'views/home.html',
-			controller  : 'homeController'
+			templateUrl : 'views/login.html',
+			controller  : 'loginController'
 		})
 
 		.when('/home', {
 			templateUrl : 'views/home.html',
 			controller  : 'homeController'
+		})
+
+		.when('/login', {
+			templateUrl : 'views/login.html',
+			controller  : 'loginController'
 		})
 
 		.otherwise({
@@ -19,5 +24,5 @@ reportAutomation.config(function($routeProvider) {
 });
 
 reportAutomation.run(function($rootScope) {
- 	
+ 	$rootScope.isAuthenticated = false;
 });

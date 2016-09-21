@@ -12,10 +12,18 @@
 
 	<script src='script/main.js'></script>
 	<script src='script/controllers/homeController.js'></script>
+	<script src='script/controllers/loginController.js'></script>
 	<title>Report Automation</title>
 </head>
 <body>
 	<div class="container">
+		<nav class="navbar navbar-default">
+		    <ul class="nav navbar-nav navbar-right">
+		        <li><a href="#home">{{ 'Home' }}</a></li>
+		        <li><a href="#login" class="menu-last-tab">{{ 'Login' }}</a></li>
+		    </ul>
+		</nav>
+		
 		<div class="jumbotron">
 	    	<div ng-view></div>
 	  	</div>

@@ -1,3 +1,10 @@
 .center {
 	text-align: center !important;
 }
+.menu-last-tab {
+	margin-right: 10px;
+}
+.small-box {
+	width: 400px;
+	margin: auto;
+}
