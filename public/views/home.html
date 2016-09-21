@@ -1,1 +1,17 @@
 <h2>report</h2>
+<table border=1>
+	<tr>
+		<th ng:repeat="key in noDairyTableHead">{{key}}</th>
+		<th>Raised Dairies</th>
+	</tr>
+  <tbody>
+  	<tr ng:repeat="data in noDairyData">
+  		<td ng:repeat="key in noDairyTableHead">
+  			{{data[key]}}
+  		</td>
+  		<td>
+  			<input type="checkbox" class="raisedDairies" id={{data["_id"]}} /> Yes
+  		</td>
+  	</tr>
+  </tbody>
+</table>
