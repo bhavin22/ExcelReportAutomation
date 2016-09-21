@@ -1,16 +1,16 @@
 <h2>report</h2>
 <table border=1>
 	<tr>
-		<th ng:repeat="key in noDairyTableHead">{{key}}</th>
+		<th ng:repeat="key in noDiaryTableHead">{{key}}</th>
 		<th>Raised Dairies</th>
 	</tr>
   <tbody>
-  	<tr ng:repeat="data in noDairyData">
-  		<td ng:repeat="key in noDairyTableHead">
+  	<tr ng:repeat="data in noDiaryData">
+  		<td ng:repeat="key in noDiaryTableHead">
   			{{data[key]}}
   		</td>
   		<td>
-  			<input type="checkbox" class="raisedDairies" id={{data["_id"]}} /> Yes
+  			<input type="checkbox" id={{data["_id"]}} class="raisedDiaries" ng-checked={{data["raisedkeys"]}} /> Yes
   		</td>
   	</tr>
   </tbody>

@@ -1,7 +1,7 @@
 reportAutomation.controller('homeController', ['$scope', '$rootScope', '$location', function($scope, $rootScope, $location) {
 
-	var noDairyHead = ["Client Code","Client Name","Total Amount","Current Amount","Unallocated Amt","Month 1","Month 2","Month 3","Between 4-6 Months","Over 6 Months"];
-	var noDairyDataArr = [{
+	var noDiaryHead = ["Client Code","Client Name","Total Amount","Current Amount","Unallocated Amt","Month 1","Month 2","Month 3","Between 4-6 Months","Over 6 Months"];
+	var noDiaryDataArr = [{
 	"_id": "a",
 	"Client Code": "AXLB04",
 	"Client Name": "XX Person",
@@ -24,7 +24,8 @@ reportAutomation.controller('homeController', ['$scope', '$rootScope', '$locatio
 	"Year To Date Fees " : 0, 
 	"Year To Date Gross " : 625.95, 
 	"Year To Date Total " : 625.95, 
-	"Vlookup " : "AXLB04 " 
+	"Vlookup " : "AXLB04 ",
+	"raisedkeys":1
 	}, 
 	{
 		"_id": "b",
@@ -49,8 +50,9 @@ reportAutomation.controller('homeController', ['$scope', '$rootScope', '$locatio
 		"Year To Date Fees " : 0, 
 		"Year To Date Gross " : -943.84, 
 		"Year To Date Total " : -943.84, 
-		"Vlookup " : "AXLB05 " }];
-	console.log(noDairyHead);
-	$scope.noDairyTableHead = noDairyHead;
-	$scope.noDairyData = noDairyDataArr;
+		"Vlookup " : "AXLB05 ",
+		"raisedkeys":1 }];
+	console.log(noDiaryHead);
+	$scope.noDiaryTableHead = noDiaryHead;
+	$scope.noDiaryData = noDiaryDataArr;
 }]);
