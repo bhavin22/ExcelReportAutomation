@@ -35,22 +35,24 @@ rule.minute = 0;
 						assert.equal(null, err);
 			    		console.log(r.insertedCount + " records inserted in diary_report");
 			    		db.collection('no_diary').remove();
-			    		db.collection('aged_dept_total').distinct( "Client Code" , function(err, distinct_client_code) {
+			    		db.collection('diary_report').distinct( "Diary Code" , function(err, distinct_diary_code) {
 			    			
-			    			var cursor = db.collection('diary_report').find(
+			    			var cursor = db.collection('aged_dept_total').find(
 				    			{ 
-				    				"Diary Code": 
+				    				"Client Code": 
 				    				{ 
-				    					$nin: distinct_client_code
+				    					$nin: distinct_diary_code
 				    				} 
-				    			}, { 'Date': 1 , _id : 0
+				    			}, { _id : 0, 
+				    				'Client Code': 1 ,'Client Name': 1 ,'Total Amount': 1 ,'Current Amount': 1 ,'Unallocated Amt': 1 ,
+				    				'Month 1': 1 ,'Month 2': 1 ,'Month 3': 1 ,'Between 4-6 Months': 1 , 'Over 6 Months' : 1
 				    			}
 				    		);
 
 				    		cursor.each(function(err, doc) {
 						      assert.equal(err, null);
 						      	if (doc != null) {
-						      		doc.raised_diaries = 'No';
+						      		doc.Raised Diaries = 'No';
 						         	db.collection('no_diary').insertOne(doc);
 						      	} else {
 						      		console.log('End Scheduler!');
