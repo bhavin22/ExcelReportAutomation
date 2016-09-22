@@ -8,3 +8,17 @@
 	width: 400px;
 	margin: auto;
 }
+.tableDiv {
+	max-height: 200px;
+	overflow-y: auto; 
+}
+.user_image {
+	float: right;
+}
+.jumbotron {
+	padding-top: 20px !important;
+}
+.redDiv {
+	background-color: #ecdede;
+	padding: 10px;
+}

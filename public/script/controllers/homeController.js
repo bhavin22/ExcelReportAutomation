@@ -2,6 +2,7 @@ reportAutomation.controller('homeController', ['$scope', '$rootScope', '$locatio
 	if(!$rootScope.isAuthenticated) {
 		$location.path('/login');
 	}
+	$scope.user = $rootScope.user;
 	$http.get('getNoDiaryData').then(function (rows) {
     	$scope.noDiaryTableHead = ["Client Code","Client Name","Total Amount","Current Amount","Unallocated Amt","Month 1","Month 2","Month 3","Between 4-6 Months","Over 6 Months"];
 		$scope.noDiaryData = rows.data;

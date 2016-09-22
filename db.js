@@ -25,7 +25,7 @@ module.exports = function(app, db, assert, config) {
 		} else if(password != config.PASSWORD) {
 			msg = "Please enter valid password";
 		} else {
-			msg = "success";
+			msg = {status : "success", user : config.USER_NAME};
 		}
 
 		res.send(msg);

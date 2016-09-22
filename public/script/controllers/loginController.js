@@ -7,10 +7,13 @@ reportAutomation.controller('loginController', ['$scope', '$rootScope', '$locati
   			user_name : $('#user_name').val(),
   			password : $('#password').val()
   		}).then(function(data){
-  			if(data.data == "success") {
-  				$rootScope.isAuthenticated = true;
-  				$location.path('/home');
-  			} else {
+        var result = data.data;
+        if(typeof result === 'object' && result.status == "success") {
+          $rootScope.isAuthenticated = true;
+          $rootScope.user = result.user;
+          $rootScope.user
+          $location.path('/home');
+        } else {
   				$("#msg").html(data.data);
   			}
   		});

@@ -1,24 +1,61 @@
-<h2 class="center">No Diaries Report</h2>
+<div class="redDiv">
+  <div class="row center">
+    <div class="col-sm-12">
+      Quote Devil - Dashboard
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      Login {{user}}
+    </div>
+    <div class="col-sm-6">
+      <img class="user_image" src="./../img/Desert.jpg" width="50" height="50">
+    </div>
+  </div>
+</div>
 <br>
-<table class="table table-bordered table-hover" border=1>
-  <thead>
-  	<tr>
-  		<th ng:repeat="key in noDiaryTableHead">{{key}}</th>
-  		<th>Raised Dairies</th>
-  	</tr>
-  </thead>
-  <tbody>
-  	<tr ng:repeat="data in noDiaryData">
-  		<td ng:repeat="key in noDiaryTableHead">
-  			{{data[key]}}
-  		</td>
-  		<td>
-  			<input type="checkbox" id={{data["_id"]}} class="raisedDiaries" ng-checked={{data["raised_diary"]}} /> Yes
-  		</td>
-  	</tr>
-  </tbody>
-</table>
-<br>
-<div class="center">
-<button class="btn btn-success" ng-click="saveData()">Save</button>
+
+<ul class="nav nav-pills nav-justified">
+  <li class="active"><a data-toggle="tab" href="#no_diary">No Diary</a></li>
+  <li><a data-toggle="tab" href="#funding_control">Funding Control</a></li>
+  <li><a data-toggle="tab" href="#aged_dept_control">Aged Dept Control</a></li>
+  <li><a data-toggle="tab" href="#diary_summary">Diary Summary</a></li>
+  <li><a data-toggle="tab" href="#weekly_sales_reporting">Weekly Sales Reporting</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="no_diary" class="tab-pane fade in active">
+    <div class="tableDiv">
+    <table class="table table-bordered table-hover" border=1>
+      <thead>
+        <tr>
+          <th ng:repeat="key in noDiaryTableHead">{{key}}</th>
+          <th>Raised Dairies</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng:repeat="data in noDiaryData">
+          <td ng:repeat="key in noDiaryTableHead">
+            {{data[key]}}
+          </td>
+          <td>
+            <input type="checkbox" id={{data["_id"]}} class="raisedDiaries" ng-checked={{data["raised_diary"]}} /> Yes
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <br>
+    <div class="center">
+    <button class="btn btn-success" ng-click="saveData()">Save</button>
+    </div>
+  </div>
+  <div id="funding_control" class="tab-pane fade">
+  </div>
+  <div id="aged_dept_control" class="tab-pane fade">
+  </div>
+  <div id="diary_summary" class="tab-pane fade">
+  </div>
+  <div id="weekly_sales_reporting" class="tab-pane fade">
+  </div>
 </div>
