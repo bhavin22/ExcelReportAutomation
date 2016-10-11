@@ -21,6 +21,17 @@ var j = schedule.scheduleJob(rule, function(){
 			data1 = data1.filter(function(el) {
     			return typeof el != "object" || Array.isArray(el) || Object.keys(el).length > 0;
 			});
+
+			data1.forEach(function(obj){
+				for (var key in obj) {
+				  	if (obj.hasOwnProperty(key) && key.indexOf('.') !== -1) {
+				    	var newKey = key.replace(/\./g,'');
+				    	obj[newKey] = obj[key];
+			        	delete obj[key];
+				  	}
+				}
+			});
+
 	  		db.collection('aged_dept_total').remove();
 			db.collection('aged_dept_total').insertMany(data1, function(err, r) {
 				assert.equal(null, err);
@@ -30,6 +41,17 @@ var j = schedule.scheduleJob(rule, function(){
 	    			data2 = data2.filter(function(el) {
 		    			return typeof el != "object" || Array.isArray(el) || Object.keys(el).length > 0;
 					});
+
+	    			data2.forEach(function(obj){
+						for (var key in obj) {
+						  	if (obj.hasOwnProperty(key) && key.indexOf('.') !== -1) {
+						    	var newKey = key.replace(/\./g,'');
+						    	obj[newKey] = obj[key];
+					        	delete obj[key];
+						  	}
+						}
+					});
+
 			  		db.collection('diary_report').remove();
 					db.collection('diary_report').insertMany(data2, function(err, r) {
 						assert.equal(null, err);
